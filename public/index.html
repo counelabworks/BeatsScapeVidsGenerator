@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#06182e">
 <title>Your Mix · Beats Scape</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,95 +11,85 @@
 <style>
 :root{
   --ink:#f4fbff;
-  --mute:rgba(214,236,248,.78);
+  --mute:rgba(214,236,248,.72);
   --line:rgba(120,210,240,.28);
   --accent:#5fd4ef;
   --cta:#e11d2e;
-  --panel:rgba(4,18,36,.58);
+  --panel:rgba(4,18,36,.55);
   --shadow:0 18px 48px rgba(0,0,0,.45);
   --f-display:"Bebas Neue",Impact,sans-serif;
   --f-body:"Outfit",system-ui,sans-serif;
-  --pad-x:clamp(16px, 4vw, 28px);
-  --pad-y:max(16px, env(safe-area-inset-top));
-  --pad-b:max(20px, env(safe-area-inset-bottom));
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{height:100%;-webkit-text-size-adjust:100%}
+html,body{margin:0;min-height:100%}
 body{
-  margin:0;min-height:100%;min-height:100dvh;
+  min-height:100vh;
   color:var(--ink);
   font:16px/1.45 var(--f-body);
-  background-color:#06182e;
-  background-image:url("/img/bgV3.png");
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:scroll;
+  background:#06182e url("/img/bgV3.png") center / cover no-repeat fixed;
   display:flex;flex-direction:column;align-items:center;
-  padding:var(--pad-y) var(--pad-x) var(--pad-b);
+  padding:max(20px, env(safe-area-inset-top)) 20px max(28px, env(safe-area-inset-bottom));
 }
 body::before{
   content:"";
   position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:linear-gradient(180deg, rgba(3,12,28,.32) 0%, rgba(3,12,28,.58) 48%, rgba(3,12,28,.78) 100%);
+  background:
+    linear-gradient(180deg, rgba(3,12,28,.35) 0%, rgba(3,12,28,.55) 45%, rgba(3,12,28,.72) 100%);
 }
 .shell{
   position:relative;z-index:1;
-  width:min(640px,100%);
-  min-height:calc(100dvh - var(--pad-y) - var(--pad-b));
+  width:min(560px,100%);
+  min-height:min(100vh, 920px);
   display:flex;flex-direction:column;align-items:center;
-  gap:clamp(12px, 2.5vh, 24px);
+  gap:0;
 }
 .brand{
   width:100%;
-  display:flex;justify-content:center;
+  display:flex;flex-direction:column;align-items:center;
+  padding-top:clamp(10px, 3vh, 24px);
   flex:0 0 auto;
-  padding-top:clamp(4px, 1.5vh, 12px);
 }
 .brand img{
   display:block;
-  width:min(200px, 42vw);
-  max-width:100%;
+  width:min(220px, 48vw);
   height:auto;
   filter:drop-shadow(0 8px 20px rgba(0,0,0,.5));
 }
 .stage{
-  flex:1 1 auto;
+  flex:1;
   width:100%;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;
-  gap:clamp(10px, 1.8vh, 16px);
-  min-height:0;
+  gap:14px;
+  padding:28px 0 20px;
 }
 .eyebrow{
   margin:0;
-  font-size:clamp(11px, 2.8vw, 12px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
   color:var(--accent);
 }
 h1{
   margin:0;
   font-family:var(--f-display);
   font-weight:400;
-  font-size:clamp(34px, 9.5vw, 68px);
-  line-height:.94;
+  font-size:clamp(42px, 11vw, 72px);
+  line-height:.92;
   letter-spacing:.02em;
   text-wrap:balance;
   text-shadow:0 4px 24px rgba(0,0,0,.55);
-  max-width:16ch;
 }
 .support{
   margin:0;
-  max-width:36ch;
+  max-width:34ch;
   color:var(--mute);
-  font-size:clamp(14px, 3.6vw, 17px);
+  font-size:clamp(15px, 2.4vw, 17px);
   font-weight:400;
-  padding-inline:4px;
 }
 .player-wrap{
   width:100%;
-  margin-top:4px;
+  margin-top:8px;
   border:1px solid var(--line);
   background:var(--panel);
   backdrop-filter:blur(10px);
@@ -108,23 +98,20 @@ h1{
   overflow:hidden;
 }
 video{
-  display:block;width:100%;max-height:min(42vh, 360px);aspect-ratio:16/9;object-fit:contain;background:#000;
+  display:block;width:100%;aspect-ratio:16/9;background:#000;vertical-align:middle;
 }
 .actions{
   display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
-  margin-top:4px;width:100%;
+  margin-top:6px;width:100%;
 }
 .btn{
   appearance:none;border:0;cursor:pointer;text-decoration:none;
   display:inline-flex;align-items:center;justify-content:center;
-  min-height:52px;min-width:min(100%, 220px);padding:0 24px;
-  width:min(100%, 320px);
-  font-family:var(--f-display);font-size:clamp(20px, 5vw, 24px);letter-spacing:.06em;
+  min-height:54px;padding:0 28px;
+  font-family:var(--f-display);font-size:22px;letter-spacing:.06em;
   color:#fff;background:var(--cta);
   box-shadow:0 10px 28px rgba(225,29,46,.35);
   transition:transform .2s ease, filter .2s ease, background .2s ease;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
 }
 .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn:active{transform:translateY(0)}
@@ -134,70 +121,56 @@ video{
   box-shadow:none;
   cursor:default;pointer-events:none;
 }
+.btn.ghost{
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--ink);
+  box-shadow:none;
+}
 .foot{
   width:100%;
   margin-top:auto;
-  padding-top:clamp(8px, 2vh, 18px);
-  display:flex;flex-direction:column;align-items:center;gap:12px;
+  padding-top:32px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
   text-align:center;
-  flex:0 0 auto;
 }
 .iqos{
   width:100%;
   margin:0;
-  padding:clamp(18px, 3.5vw, 26px) clamp(16px, 4vw, 24px);
-  border:1px solid rgba(95,212,239,.38);
-  background:linear-gradient(180deg, rgba(8,36,58,.78), rgba(4,18,36,.84));
+  padding:22px 20px 24px;
+  border:1px solid rgba(95,212,239,.35);
+  background:linear-gradient(180deg, rgba(8,36,58,.72), rgba(4,18,36,.78));
   box-shadow:0 16px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
-  display:flex;flex-direction:column;align-items:center;gap:clamp(8px, 1.5vh, 12px);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
 }
 .iqos-kicker{
   margin:0;
-  font-size:clamp(10px, 2.6vw, 12px);font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
   color:var(--accent);
 }
 .iqos-link{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:48px;
+  display:inline-block;
   font-family:var(--f-display);
-  font-size:clamp(36px, 11vw, 56px);
+  font-size:clamp(40px, 10vw, 56px);
   line-height:.95;
   letter-spacing:.04em;
   color:#fff;
   text-decoration:none;
   text-shadow:0 0 28px rgba(95,212,239,.45);
   border-bottom:3px solid var(--accent);
-  padding:4px 2px 6px;
+  padding-bottom:2px;
   transition:color .2s ease, border-color .2s ease, text-shadow .2s ease;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
 }
-.iqos-link:hover,.iqos-link:focus-visible{
+.iqos-link:hover{
   color:var(--accent);
   border-color:#fff;
   text-shadow:0 0 36px rgba(95,212,239,.7);
-  outline:none;
 }
-.iqos-cta{
-  margin:0;
-  max-width:28ch;
-  color:#fff;
-  font-size:clamp(15px, 3.8vw, 18px);
-  font-weight:600;
-  line-height:1.35;
-}
-.iqos-cta a{
-  color:var(--accent);
-  text-decoration:underline;
-  text-underline-offset:3px;
-  font-weight:700;
-}
-.iqos-cta a:hover,.iqos-cta a:focus-visible{color:#fff}
 .iqos-note{
   margin:0;
-  max-width:32ch;
+  max-width:28ch;
   color:var(--mute);
-  font-size:clamp(13px, 3.2vw, 15px);font-weight:500;line-height:1.4;
+  font-size:15px;font-weight:500;line-height:1.4;
 }
 .legal{
   margin:0;
@@ -205,33 +178,6 @@ video{
   letter-spacing:.04em;
   color:rgba(214,236,248,.4);
 }
-
-/* Phones in landscape — keep content reachable without huge empty space */
-@media (orientation:landscape) and (max-height:520px){
-  .shell{min-height:auto;gap:10px}
-  .brand img{width:min(150px, 28vw)}
-  .stage{justify-content:flex-start;padding-top:4px}
-  h1{font-size:clamp(28px, 7vw, 40px)}
-  video{max-height:38vh}
-  .iqos{padding:14px 16px;gap:6px}
-  .iqos-link{font-size:clamp(28px, 7vw, 40px)}
-}
-
-/* Larger phones / tablets */
-@media (min-width:600px){
-  .brand img{width:min(230px, 36vw)}
-  .btn{width:auto;min-width:240px}
-}
-
-/* Desktop */
-@media (min-width:900px){
-  body{background-attachment:fixed}
-  .shell{width:min(680px,100%);gap:22px}
-  .brand img{width:240px}
-  video{max-height:380px}
-  .iqos{padding:28px 32px}
-}
-
 @media (prefers-reduced-motion:reduce){
   .btn,.iqos-link{transition:none}
 }
@@ -249,7 +195,7 @@ video{
     <p class="support" id="support">Keep your printout. This page opens your take from the QR.</p>
 
     <div class="player-wrap" id="playerWrap" hidden>
-      <video id="player" controls playsinline playsInline webkit-playsinline></video>
+      <video id="player" controls playsinline></video>
     </div>
 
     <div class="actions">
@@ -262,9 +208,6 @@ video{
     <div class="iqos">
       <p class="iqos-kicker">Presented with</p>
       <a class="iqos-link" href="https://www.iqos.com/" target="_blank" rel="noopener noreferrer">IQOS.com</a>
-      <p class="iqos-cta">
-        <a href="https://www.iqos.com/" target="_blank" rel="noopener noreferrer">Click here to know more about IQOS</a>
-      </p>
       <p class="iqos-note">Step beyond the mix — explore what’s next with IQOS.</p>
     </div>
     <p class="legal">Beats Without Limits · Stay Curious</p>
