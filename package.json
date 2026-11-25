@@ -1,0 +1,9 @@
+{
+  "name": "beats-scape-url-vids-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Guest download page for Beats Scape (Vercel + Backblaze B2)",
+  "engines": {
+    "node": ">=18"
+  }
+}
