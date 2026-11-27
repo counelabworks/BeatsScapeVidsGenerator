@@ -7,7 +7,7 @@ Local mixer records → uploads to Backblaze → guest QR opens this site → si
 ## Page
 
 - Background: `public/img/bgV3.png`
-- Brand: `public/img/LOGO_CuriousBeatsXDWP.png`
+- Brand: BeatsScape wordmark in Breathing IQOS (`public/fonts/`)
 - IQOS invite → [iqos.com](https://www.iqos.com/)
 
 ## Deploy

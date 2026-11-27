@@ -5,10 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#06182e">
 <title>Your Mix · Beats Scape</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap">
 <style>
+@font-face{
+  font-family:"Breathing IQOS";
+  src:url("/fonts/BreathingIQOS-Regular.otf") format("opentype");
+  font-weight:400; font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:"Breathing IQOS";
+  src:url("/fonts/BreathingIQOS-Bold.otf") format("opentype");
+  font-weight:700; font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:"IQOS";
+  src:url("/fonts/IQOS-Bold.otf") format("opentype");
+  font-weight:700; font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:"IQOS Sans";
+  src:url("/fonts/IQOSSans-Regular.otf") format("opentype");
+  font-weight:400; font-style:normal; font-display:swap;
+}
 :root{
   --ink:#f4fbff;
   --mute:rgba(214,236,248,.72);
@@ -18,8 +35,9 @@
   --ink-btn:#001823;
   --panel:rgba(4,18,36,.55);
   --shadow:0 18px 48px rgba(0,0,0,.45);
-  --f-display:"Bebas Neue",Impact,sans-serif;
-  --f-body:"Outfit",system-ui,sans-serif;
+  --f-brand:"Breathing IQOS", "IQOS", system-ui, sans-serif;
+  --f-display:"IQOS", "IQOS Sans", system-ui, sans-serif;
+  --f-body:"IQOS Sans", "IQOS", system-ui, sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -54,11 +72,11 @@ body::before{
 }
 .brand .wordmark{
   margin:0;
-  font-family:var(--f-display);
-  font-weight:400;
-  font-size:clamp(36px, 9vw, 56px);
+  font-family:"Breathing IQOS", cursive;
+  font-weight:700;
+  font-size:clamp(40px, 10vw, 64px);
   line-height:.92;
-  letter-spacing:.02em;
+  letter-spacing:-.02em;
   color:#f4fcfd;
   text-shadow:0 4px 24px rgba(0,0,0,.55);
 }
