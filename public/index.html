@@ -51,12 +51,17 @@ body::before{
   padding-top:clamp(10px, 3vh, 24px);
   flex:0 0 auto;
 }
-.brand img{
-  display:block;
-  width:min(220px, 48vw);
-  height:auto;
-  filter:drop-shadow(0 8px 20px rgba(0,0,0,.5));
+.brand .wordmark{
+  margin:0;
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:clamp(36px, 9vw, 56px);
+  line-height:.92;
+  letter-spacing:.02em;
+  color:#f4fcfd;
+  text-shadow:0 4px 24px rgba(0,0,0,.55);
 }
+.brand .wordmark span{color:var(--accent)}
 .stage{
   flex:1;
   width:100%;
@@ -186,7 +191,7 @@ video{
 <body>
 <div class="shell">
   <header class="brand">
-    <img src="/img/LOGO_CuriousBeatsXDWP.png" alt="Curious Beats × DWP 2026 Jakarta" width="840" height="240">
+    <p class="wordmark" aria-label="BeatsScape">Beats<span>Scape</span></p>
   </header>
 
   <main class="stage">
